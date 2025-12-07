@@ -9,3 +9,10 @@ def word_count():
     frankenstein = get_book_text("./books/frankenstein.txt")
     word_count = len(frankenstein.split())
     print(f"Found {word_count} total words")
+
+def char_stats():
+    frankenstein = get_book_text("./books/frankenstein.txt")
+    stat_dict = {}
+    for char in frankenstein:
+        char = char.lower()
+        
