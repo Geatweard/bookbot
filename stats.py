@@ -6,6 +6,7 @@ def get_book_text(path_to_file):
 
 #prints word count of book
 def word_count():
+    frank_path = "./books/frankenstein.txt"
     frankenstein = get_book_text("./books/frankenstein.txt")
     word_count = len(frankenstein.split())
     print(f"Found {word_count} total words")
@@ -19,7 +20,10 @@ def char_stats():
             stat_dict[char_lower] += 1
         else:
             stat_dict[char_lower] = 1
-    print(stat_dict)
+    return stat_dict
+
+def sorted_stats(stat_dict):
+    
         
 
 
