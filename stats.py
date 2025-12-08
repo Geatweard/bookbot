@@ -14,5 +14,12 @@ def char_stats():
     frankenstein = get_book_text("./books/frankenstein.txt")
     stat_dict = {}
     for char in frankenstein:
-        char = char.lower()
+        char_lower = char.lower()
+        if char_lower in stat_dict:
+            stat_dict[char_lower] += 1
+        else:
+            stat_dict[char_lower] = 1
+    print(stat_dict)
         
+
+
