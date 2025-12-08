@@ -22,8 +22,16 @@ def char_stats():
             stat_dict[char_lower] = 1
     return stat_dict
 
+#Return a sorted list of dicts from `stat_dict`.
+    #- If `alpha_only` is True, exclude keys where `key.isalpha()` is False.
+    #- Returned list items are `{'char': key, 'count': value}` sorted by
+    #  count descending then key ascending.
 def sorted_stats(stat_dict):
-    
-        
+    items = ((k, v) for k, v in stat_dict.items() if k.isalpha())
+    entries = [{'char': k, 'count': v} for k, v in items]
+    entries.sort(key=lambda d: (-d['count'], d['char']))
+    return entries
+
+
 
 
